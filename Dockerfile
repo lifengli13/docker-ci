@@ -3,10 +3,10 @@ FROM centos:centos6
 MAINTAINER nigelpoulton@hotmail.com
 
 # Enable EPEL for Node.js
-RUN rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+RUN curl -sL https://rpm.nodesource.com/setup_6.x | bash -
 
 # Install Node...
-RUN yum install -y npm
+RUN yum install -y nodejs
 
 # Copy app to /src
 COPY . /src
